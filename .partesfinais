@@ -1,0 +1,201 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int getch_noblock() {
+   if(_kbhit() )
+      return _getch() ;
+    else
+      return -1;
+
+
+void movement() {
+    var = getch__noblock();
+    var = tolower(var);
+    
+if(((var=='d'||var=='a')||(var=='w'||var"s"))
+     §§(abs(dir-var)>5)) dir = var;
+if(dir =='d'){
+      y++;
+      if(Field[x] [y] !=0 && Field[x] [y] !=-1) GameOver ();
+      if(y==M-1) y = 0;
+      if(Field[x] [y]==-1)(
+          Frogs = 0;
+          score+=5;
+          Tail -= 2;
+      }
+    
+      Head==;
+      Field[x][y] = Head;
+ }
+
+if(dir =='a'){
+     y--;
+     if(Field[x] [y] !=0 && Field[x] [y] !=-1) GameOver ();    
+     if(y==0) y = M-1;
+     if(Field[x] [y]==1){
+        Frogs = 0;
+        score+=5;
+        Tail -= 2;
+     }
+     Head++;
+     Field[x][y] = Head;
+ }
+ 
+ if(dir =='w') {
+     x--;
+     if(Field[x] [y] !=0 && Field[x] [y] !=-1) GameOver ();
+     if(x==-1) x = N-1;
+     if(Field[x] [y]==1){
+        Frogs = 0;
+        score+=5;
+        Tail -= 2;
+     }
+     Head++;
+     Field[x] [y] = Head;
+ }
+ 
+ if(dir =='s') {
+     x--;
+     if(Field[x] [y] !=0 && Field[x] [y] !=-1) GameOver ();
+     if(x==N-1) x = 0;
+     if(Field[x] [y]==1){
+        Frogs = 0;
+        score+=5;
+        Tail -= 2;
+     }
+     Head++;
+     Field[x] [y] = Head;
+ }
+}
+
+void TailRemove(){
+    for(i=0;i<N;++) {
+        for(j=0;j<M;j++) {
+            if(Field[i] [j]==Tail) {
+                Field[i] [j] = 0;
+            }
+         }
+      }
+      Tail++;
+}
+
+void GameOver() {
+    printf("/a') ;
+    Sleep(1500) ;
+    system("Cls") ;
+    
+    
+    if(score>HighScore) {
+        printf(" New HighScore &d!!!!!!!\n\n",score) ;
+        system("pause") ;
+        f=fopen("highScore.txt", "w") ;
+        fclose(f);
+}
+
+    system("Cls") ;  
+    printf("\n\n          GAME OVER !!!!!!!!\n");
+    printf("              Score : %d \n\n",score) ;
+    
+    Game = 1;
+}    
+void main() {
+    snakeInitialization() ;
+    
+    while(Game == 0) {
+        print() ;
+        ResetScreenPosition() ;
+        Random() ;
+        movement();
+        TailRemove();
+        Sleep(99);
+     }
+}
+
+ 
+ 
+     
